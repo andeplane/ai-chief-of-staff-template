@@ -89,7 +89,7 @@ Tasks are managed with [kanban-md](https://github.com/jmhobbs/kanban-md) in the 
 
 1. Install kanban-md: `brew install jmhobbs/tap/kanban-md` (or see the kanban-md docs for other install methods)
 2. Initialize the board: `kanban-md init` inside this directory
-3. Install the AI skill for your editor: `kanban-md skill install` — choose Claude Code, Cursor, or another supported editor
+3. Install the AI skill: `kanban-md skill install` — choose Claude Code
 
 ## Tag scheme
 

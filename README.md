@@ -16,7 +16,7 @@ A personal AI workspace that knows who you are, what you're working on, and help
 AI Chief of Staff is a Claude Code project template structured to give your AI assistant persistent context about you. Rather than starting every conversation from scratch, your AI knows your name, your role, your responsibilities, the people in your life, and your current projects. It acts as a chief of staff: keeping track of tasks, helping you think through decisions, drafting communications, and picking up context where you left off.
 
 The workspace uses:
-- **Claude Code** (or Cursor) as the AI interface
+- **Claude Code** as the AI interface
 - **kanban-md** for task tracking, fully integrated into the AI's context
 - **AGENTS.md files** throughout the directory tree to give the AI structured context for each area of your life
 
@@ -46,7 +46,7 @@ cd ~/your-chief-of-staff
 
 ```bash
 kanban-md init
-kanban-md skill install   # choose Claude Code, Cursor, etc.
+kanban-md skill install   # choose Claude Code
 ```
 
 ### 4. Configure your personal context
