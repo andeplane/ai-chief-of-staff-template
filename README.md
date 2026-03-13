@@ -4,6 +4,22 @@ A personal AI workspace that knows who you are, what you're working on, and help
 
 ![Example layout](screenshots/example.png)
 
+## How to get started
+
+1. **[Install prerequisites and set up the workspace](#getting-started)** — Claude Code, kanban-md, iTerm2, and your personal context
+2. **Open the 3-pane layout** — requires iTerm2:
+
+```bash
+./scripts/iterm-layout.sh
+
+# With auto-approved permissions (use at your own discretion)
+./scripts/iterm-layout.sh --dangerously-skip-permissions
+```
+
+Leave it open all day and interact with Claude constantly — drop in Slack threads, PRs, decisions, anything.
+
+---
+
 ## Features
 
 - **Claude always at hand** — a dedicated window with Claude Code ready to receive anything you throw at it: Slack posts, PRs to review, threads to respond to, decisions to make
@@ -33,7 +49,7 @@ The workspace uses:
 
 - [Claude Code](https://docs.anthropic.com/claude-code) installed and authenticated
 - [kanban-md](https://github.com/jmhobbs/kanban-md) installed
-- iTerm2 (optional, for the 3-pane layout script)
+- [iTerm2](https://iterm2.com) — required for the 3-pane layout
 
 ### 2. Clone and set up
 
