@@ -75,11 +75,49 @@ The bar is low: if you'd have to ask again next time, write it down now.
 
 ## What goes where
 
-- New person or relationship → relevant area `AGENTS.md` (e.g. `cognite/team/AGENTS.md`)
-- Decision made → the folder closest to that topic, under a `## Decisions` section
-- Project update or status → the project's own `AGENTS.md`
-- Working style or personal preference → top-level `AGENTS.md`
-- Anything the user says "remember" or "note" → write it immediately to the most specific relevant file
+There are two storage layers. Use the right one:
+
+| Type | Store in |
+|------|----------|
+| **People** — anyone mentioned by name, their role, team, relationships | Ontology (`Person` entity) |
+| **Meetings** — any meeting, standup, sync, or discussion | Ontology (`Event` entity) |
+| **PRs** — pull requests shared, reviewed, or discussed | Ontology (`Document` entity, tag `pr`) |
+| **Projects** — products, initiatives, codebases | Ontology (`Project` entity) |
+| **Decisions** — what was decided and why | `AGENTS.md` under a `## Decisions` section in the relevant folder |
+| **Working style / preferences** | Top-level `AGENTS.md` |
+| **Org/area narrative context** | The relevant area's `AGENTS.md` |
+| **Anything the user says "remember" or "note"** | Ontology if it fits a type above, otherwise nearest `AGENTS.md` |
+
+### Ontology — always prefer for structured entities
+
+When you learn about a person, meeting, PR, or project, create or update an ontology entity **first**. Use relations to link them:
+
+```bash
+# New person
+python3 scripts/ontology.py create --type Person --props '{"name":"Alice","role":"Engineer","team":"Platform"}'
+
+# New project
+python3 scripts/ontology.py create --type Project --props '{"name":"Atlas","status":"active"}'
+
+# Link person to project
+python3 scripts/ontology.py relate --from p_001 --rel works_on --to proj_001
+
+# Log a meeting
+python3 scripts/ontology.py create --type Event --props '{"title":"Atlas sync","start":"2026-03-13","attendees":["p_001","p_002"]}'
+
+# Track a PR
+python3 scripts/ontology.py create --type Document --props '{"title":"PR #412: Add caching layer","url":"...","tags":["pr"],"status":"open"}'
+```
+
+Query anytime:
+```bash
+python3 scripts/ontology.py query --type Person
+python3 scripts/ontology.py related --id proj_001 --rel works_on
+```
+
+### AGENTS.md — for narrative and context
+
+Use `AGENTS.md` files for things that don't fit a typed entity: area overviews, decisions with rationale, recurring process descriptions, freeform notes. Think of it as the prose layer on top of the graph.
 
 # Task Tracking
 
