@@ -23,7 +23,8 @@ Leave it open all day and interact with Claude constantly — drop in Slack thre
 ## Features
 
 - **Claude always at hand** — a dedicated window with Claude Code ready to receive anything you throw at it: Slack posts, PRs to review, threads to respond to, decisions to make
-- **Persistent memory** — the agent is instructed to write everything back to `AGENTS.md` files: decisions made, people mentioned, project updates, priorities. Context accumulates over time instead of resetting each session
+- **Persistent memory** — context accumulates over time across two layers: a typed knowledge graph (ontology) for structured entities, and `AGENTS.md` files for narrative context. Nothing resets between sessions
+- **Knowledge graph** — people, meetings, PRs, and projects are stored as linked entities in a local ontology. Ask "what do I know about X?", "who works on Y?", or "show me open PRs for project Z" and get structured answers
 - **Interactive task board** — a live kanban TUI in the terminal for managing and navigating your work
 - **Next-up task view** — a live pane showing upcoming tasks sorted by due date, so you always know what to do next
 
@@ -34,7 +35,8 @@ AI Chief of Staff is a Claude Code project template structured to give your AI a
 The workspace uses:
 - **Claude Code** as the AI interface
 - **kanban-md** for task tracking, fully integrated into the AI's context
-- **AGENTS.md files** throughout the directory tree to give the AI structured context for each area of your life
+- **Ontology** — a local knowledge graph for people, meetings, PRs, projects, and their relations
+- **AGENTS.md files** throughout the directory tree for narrative context, decisions, and area overviews
 
 ## What to expect
 
