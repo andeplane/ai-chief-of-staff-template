@@ -90,30 +90,7 @@ There are two storage layers. Use the right one:
 
 ### Ontology — always prefer for structured entities
 
-When you learn about a person, meeting, PR, or project, create or update an ontology entity **first**. Use relations to link them:
-
-```bash
-# New person
-python3 scripts/ontology.py create --type Person --props '{"name":"Alice","role":"Engineer","team":"Platform"}'
-
-# New project
-python3 scripts/ontology.py create --type Project --props '{"name":"Atlas","status":"active"}'
-
-# Link person to project
-python3 scripts/ontology.py relate --from p_001 --rel works_on --to proj_001
-
-# Log a meeting
-python3 scripts/ontology.py create --type Event --props '{"title":"Atlas sync","start":"2026-03-13","attendees":["p_001","p_002"]}'
-
-# Track a PR
-python3 scripts/ontology.py create --type Document --props '{"title":"PR #412: Add caching layer","url":"...","tags":["pr"],"status":"open"}'
-```
-
-Query anytime:
-```bash
-python3 scripts/ontology.py query --type Person
-python3 scripts/ontology.py related --id proj_001 --rel works_on
-```
+When you learn about a person, meeting, PR, or project, create or update an ontology entity **first**. Use the [ontology skill](.claude/skills/ontology/SKILL.md) for creating, querying, and relating entities.
 
 ### AGENTS.md — for narrative and context
 
