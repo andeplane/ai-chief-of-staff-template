@@ -50,7 +50,10 @@ The workspace uses:
 ### 1. Prerequisites
 
 - [Claude Code](https://docs.anthropic.com/claude-code) installed and authenticated
-- [kanban-md](https://github.com/jmhobbs/kanban-md) installed
+- [kanban-md](https://github.com/antopolskiy/kanban-md) installed:
+  ```bash
+  brew install antopolskiy/tap/kanban-md
+  ```
 - [iTerm2](https://iterm2.com) — required for the 3-pane layout
 
 ### 2. Clone and set up
